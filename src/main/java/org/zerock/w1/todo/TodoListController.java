@@ -18,13 +18,14 @@ public class TodoListController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("/todo/list");
 
-//        3. TodoService에서 제공하는 List<TodoDTO>를 가져온다.
+//        1-4. TodoService에서 제공하는 List<TodoDTO>를 가져온다.
         List<TodoDTO> dtoList = TodoService.INSTANCE.getList();
 
-//        4. 객체를 보관
+//        1-5. 객체를 보관
         req.setAttribute("list", dtoList);
 
-        req.getRequestDispatcher("/WEB-INF/todo/list.jsp").forward(req,resp);
+//        1-6. jsp에 쏴줌
+       req.getRequestDispatcher("/WEB-INF/todo/list.jsp").forward(req,resp);
     }
 
 }

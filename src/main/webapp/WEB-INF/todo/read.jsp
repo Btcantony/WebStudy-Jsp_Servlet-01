@@ -11,9 +11,10 @@
     <title>Title</title>
 </head>
 <body>
+<%--2-3 화면에 Todo조회 띄우기--%>
     <div>${dto.tno}</div>
     <div>${dto.title}</div>
-    <div>${dto.dueDate}</div>
+<%--  ㅋ--%>
     <div>${dto.finished}</div>
 </body>
 </html>

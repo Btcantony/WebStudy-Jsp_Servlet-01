@@ -2,13 +2,14 @@ package org.zerock.w1.todo.dto;
 
 import java.time.LocalDate;
 
+// 1-1.DTO 생성
 public class TodoDTO {
 
     private Long tno;
 
     private String title;
 
-    private LocalDate dueDate;
+    private LocalDate deuDate;
 
     private boolean finished;
 
@@ -28,12 +29,12 @@ public class TodoDTO {
         this.title = title;
     }
 
-    public LocalDate getDueDate() {
-        return dueDate;
+    public LocalDate getDeuDate() {
+        return deuDate;
     }
 
-    public void setDueDate(LocalDate dueDate) {
-        this.dueDate = dueDate;
+    public void setDeuDate(LocalDate deuDate) {
+        this.deuDate = deuDate;
     }
 
     public boolean isFinished() {
@@ -49,7 +50,7 @@ public class TodoDTO {
         return "TodoDTO{" +
                 "tno=" + tno +
                 ", title='" + title + '\'' +
-                ", dueDate=" + dueDate +
+                ", deuDate=" + deuDate +
                 ", finished=" + finished +
                 '}';
     }

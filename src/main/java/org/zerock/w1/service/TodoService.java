@@ -8,39 +8,38 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public enum TodoService {
-    INSTANCE;
+   INSTANCE;
 
-//    1번 todo 객체를 받는다.
-    public void register(TodoDTO todoDTO) {
+   // 1-2. TodoDTO객체를 받는 Register생성
+   public void register(TodoDTO todoDTO) {
+       System.out.println("DTO : " + todoDTO);
+   }
 
-        System.out.println("DEBUG......" + todoDTO);
+   // 1-3. 10개의 TodoDTO객체 만들어 반환
+    public List<TodoDTO> getList() {
+
+       List<TodoDTO> todoDTOS = IntStream.range(0,10).mapToObj(i -> {
+           TodoDTO dto = new TodoDTO();
+           dto.setTno((long)i);
+           dto.setTitle("Todo.." + i);
+           dto.setDeuDate(LocalDate.now());
+
+           return dto;
+       }).collect(Collectors.toList());
+
+       return todoDTOS;
+
     }
 
-//    2번 todo 객체를 만들어 반환
-    public List<TodoDTO> getList(){
+    // 2-1 특정 번호 조회 기능
+    public TodoDTO get(Long tno) {
 
-        List<TodoDTO> todoDTOS = IntStream.range(0,10).mapToObj(i -> {
-            TodoDTO dto = new TodoDTO();
-            dto.setTno((long)i);
-            dto.setTitle("Todo.." +i);
-            dto.setDueDate(LocalDate.now());
+       TodoDTO dto = new TodoDTO();
+       dto.setTno(tno);
+       dto.setTitle("Sample Todo");
+       dto.setDeuDate(LocalDate.now());
+       dto.setFinished(true);
 
-            return dto;
-        }).collect(Collectors.toList());
-
-        return todoDTOS;
+       return dto;
     }
-
-    public TodoDTO get(Long tno){
-
-        TodoDTO dto = new TodoDTO();
-        dto.setTno(tno);
-        dto.setTitle("Sample Todo");
-        dto.setDueDate(LocalDate.now());
-        dto.setFinished(true);
-
-        return dto;
-    }
-
-
 }

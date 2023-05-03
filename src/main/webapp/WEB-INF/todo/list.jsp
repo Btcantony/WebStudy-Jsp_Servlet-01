@@ -15,9 +15,9 @@
 <body>
 <h1>List Page</h1>
 
-<%--5. 컨트롤러에 보관된 데이터를 사용--%>
-<%--${list}--%>
+<%--1-7. 컨트롤러에 보관된 getLIST 데이터를 사용--%>
 
+<%--${list}--%>
 
 <ul>
     <c:forEach var="dto" items="${list}">
